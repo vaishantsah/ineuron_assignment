@@ -1,17 +1,28 @@
 1. In the below elements which of them are values or an expression? eg:- values can be integer or string and expressions will be mathematical operators.
-* 
-'hello'
--87.8
-- 
-/ 
-+	
-6 
+* - Expressions
+'hello' - Values
+-87.8 - Values
+- - Expressions
+/ - Expressions
++	- Expressions
+6 - Values
 
 2. What is the difference between string and variable?
+a. In python a variable is a name which refers to a value, which can be of any data type including strings. While strings is a special data type which holds a sequence of characters only.
+b. To hold a value in string both "" and '' are used. Variables, on the other hand don't need them.
+For example,
+x="Hello world"
+c. x is the variable while Hello World! is the string held inside the variable 'x'.
+Strings and used to store and manipulate textual data while variable are used to store and manipulate various data types including strings.
 
 3. Describe three different data types.
+Numeric- These include integers, complex numbers, and floating point numbers.
+Strings- These hold characters in a sequential manner. They are enclosed in "" or ''.
+Boolean- These are binary numbers which are mainly used for verifying if a condition is True or False (1 or 0).
 
 4. What is an expression made up of? What do all expressions do?
+In python an expression is made up of values, operators
+
 5. This assignment statements, like spam = 10. What is the difference between an expression and a statement?
 6. After running the following code, what does the variable bacon contain?
 bacon = 22
