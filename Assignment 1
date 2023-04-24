@@ -35,19 +35,33 @@ def add(x,y):
 add(a,b)
 
 5. This assignment statements, like spam = 10. What is the difference between an expression and a statement?
-In Python an expression is a combination of 
+In Python an expression is a combination of values, operators and a function which are used to produce a result.
+While a statement is a complete instruction in a program that performs some action in a program like "spam=10" which assigns the value '10' in 'spam'. 
 
 6. After running the following code, what does the variable bacon contain?
 bacon = 22
 bacon + 1
+The variable bacon contains value 22
 
 7. What should the values of the following two terms be?
 'spam' + 'spamspam'
 'spam' * 3
+The following two terms should have the same values since 'spam' + 'spamspam' gets concatinated to spamspamspam and 'spam' * 3 does the same thing and produces the result 'spamspamspam'.
 
 8. Why is eggs a valid variable name while 100 is invalid?
+There are 4 main conditions for naming a variable in Python;
+One of them is that a variable's name should not start with a number thus '100' is invalid.
+Another one says that a variable's name should start with a letter and a third rules says that it should only contain Alpha-Numeric Characters(Aa-Zz 0-9).
+And the last rule suggests that the name can be Case Sensitive(Aa-Zz)
+Thus, 'egg' is a valid name.
+
 9. What three functions can be used to get the integer, floating-point number, or string version of a value?
+int()  - Can be used to get a value in integer format.
+float()- Can be used to get a value in floating-point format.
+str()  - Can be used to get a value in string format.
+
 10. Why does this expression cause an error? How can you fix it?
 'I have eaten ' + 99 + ' burritos.'
-
-
+The expression 'I have eaten ' + 99 + ' burritos.' have an integer value 99 between 'I have eaten ' and ' burritos.'.
+We can fix it by putting the 99 in quotes. The correct expression will be as follows;
+'I have eaten ' + '99' + ' burritos.'
