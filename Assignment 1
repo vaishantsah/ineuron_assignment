@@ -4,7 +4,7 @@
 -87.8 - Values
 - - Expressions
 / - Expressions
-+	- Expressions
++ - Expressions
 6 - Values
 
 2. What is the difference between string and variable?
@@ -41,7 +41,7 @@ While a statement is a complete instruction in a program that performs some acti
 6. After running the following code, what does the variable bacon contain?
 bacon = 22
 bacon + 1
-The variable bacon contains value 22
+The variable bacon contains value 22.
 
 7. What should the values of the following two terms be?
 'spam' + 'spamspam'
