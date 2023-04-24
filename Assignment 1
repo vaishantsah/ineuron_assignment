@@ -21,9 +21,22 @@ Strings- These hold characters in a sequential manner. They are enclosed in "" o
 Boolean- These are binary numbers which are mainly used for verifying if a condition is True or False (1 or 0).
 
 4. What is an expression made up of? What do all expressions do?
-In python an expression is made up of values, operators
+In python an expression is made up of values, operators and a function that can be used to evaluate a result. 
+Values can be constants like '3' or string literal like 'hello' or it can be a variable whose values could change with the program.
+Operators are symbols which perform mathematical operations on one or more values like '*','+','-','/' etc.
+Function call are used to call pre defined or user-defined function which take values as arguements and perform an operation to return a result.
+For example, a buit in function called "len()" takes a list or a string input and returns the total number of string literal in the variable.
+Similarly a user defined function can be of adding two number and returning a result of it's addition.
+a=int(input())
+b=int(input())
+def add(x,y):
+    c=x+y
+    return c
+add(a,b)
 
 5. This assignment statements, like spam = 10. What is the difference between an expression and a statement?
+In Python an expression is a combination of 
+
 6. After running the following code, what does the variable bacon contain?
 bacon = 22
 bacon + 1
