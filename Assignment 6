@@ -1,0 +1,21 @@
+1. What are escape characters, and how do you use them?
+2. What do the escape characters n and t stand for?
+3. What is the way to include backslash characters in a string?
+4. The string &quot;Howl&#39;s Moving Castle&quot; is a correct value. Why isn&#39;t the single quote character in the
+word Howl&#39;s not escaped a problem?
+5. How do you write a string of newlines if you don&#39;t want to use the n character?
+6. What are the values of the given expressions?
+&#39;Hello, world!&#39;[1]
+&#39;Hello, world!&#39;[0:5]
+&#39;Hello, world!&#39;[:5]
+&#39;Hello, world!&#39;[3:]
+
+7. What are the values of the following expressions?
+&#39;Hello&#39;.upper()
+&#39;Hello&#39;.upper().isupper()
+&#39;Hello&#39;.upper().lower()
+8. What are the values of the following expressions?
+&#39;Remember, remember, the fifth of July.&#39;.split()
+&#39;-&#39;.join(&#39;There can only one.&#39;.split())
+9. What are the methods for right-justifying, left-justifying, and centering a string?
+10. What is the best way to remove whitespace characters from the start or end?
