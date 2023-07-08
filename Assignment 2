@@ -1,6 +1,11 @@
-1.What are the two values of the Boolean data type? How do you write them?
+1. What are the two values of the Boolean data type? How do you write them?
+The two Boolean Data type are 'True' and 'False'.
+It's written as,
+x='True'
+y='False'
+
 2. What are the three different types of Boolean operators?
-3. Make a list of each Boolean operator's truth tables (i.e. every possible combination of Boolean values for the operator and what it evaluate ).
+3. Make a list of each Boolean operator's truth tables (i.e. every possible combination of Boolean values for the operator and what it evaluates).
 4. What are the values of the following expressions?
 (5 > 4) and (3 == 5)
 not (5 > 4)
