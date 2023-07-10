@@ -5,16 +5,59 @@ x='True'
 y='False'
 
 2. What are the three different types of Boolean operators?
+Logical AND('and'). If both the logical operators are 'True' or 'False' it returns a 'True' or 'False'.
+Logical OR('or'). If returns 'True' if either of the logical operator is 'True' otherwise it returns 'False'.
+Logical NOT('not'). This operator returns the inverse of the operand's logical value. If the operand is 'True', the not operator returns 'False', and if the operand is 'False', it returns 'True'.
+
 3. Make a list of each Boolean operator's truth tables (i.e. every possible combination of Boolean values for the operator and what it evaluates).
+Logical AND (and):
+Operand 1	Operand 2	Result
+ False	  False	    False
+ False	  True	    False
+ True	    False	    False
+ True	    True	    True
+
+Logical OR (or):
+Operand 1	Operand 2	Result
+ False	   False	  False
+ False     True     True
+ True	     False  	True
+ True	     True	    True
+
+Logical NOT (not):
+Operand	Result
+ False	True
+ True	  False
+
 4. What are the values of the following expressions?
 (5 > 4) and (3 == 5)
+False
 not (5 > 4)
+False
 (5 > 4) or (3 == 5)
+True
 not ((5 > 4) or (3 == 5))
+False
 (True and True) and (True == False)
+False
 (not False) or (not True)
+True
+
 5. What are the six comparison operators?
-6. How do you tell the difference between the equal to and assignment operators?Describe a condition and when you would use one.
+Equal to: '=='
+Not equal to: '!='
+Greater than: '>'
+Less than: '<'
+Greater than or equal to: '>='
+Less than or equal to: '<='
+
+6. How do you tell the difference between the equal to and assignment operators? Describe a condition and when you would use one.
+The equal to operator is used for comparison and evaluates whether two values are equal.
+The assignment operator is used to assign a value to a variable.
+
+x == y compares the values of x and y and returns true if they are equal, and false otherwise.
+x = y assigns the value of y to the variable x.
+
 7. Identify the three blocks in this code:
 spam = 0
 if spam == 10:
@@ -25,11 +68,50 @@ else:
 print('ham')
 print('spam')
 print('spam')
+
+if spam == 10:
+print('eggs')
+This is an if block which checks if spam == 10. If it is then it'll print 'eggs' else it'll move to the next block.
+if spam > 5:
+print('bacon')
+This is also an if block which checks if spam>5. If the condition is 'True', it'll print 'bacon'.
+else:
+print('ham')
+print('spam')
+print('spam')
+This is an else block that will execute if all the previous conditions in the block are 'False' It'll print 'ham', 'spam', and 'spam'.
+
 8. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints Greetings! if anything else is stored in spam.
+if spam == 1:
+  print('Hello')
+if spam == 2:
+  print('Howdy')
+else:
+  print('Greetings!')
 
+9. If your program is stuck in an endless loop, what keys you’ll press?
+Windows/Linux: Press 'Ctrl' + 'C'
+Mac: Press 'Command' + '.'
 
-9.If your programme is stuck in an endless loop, what keys you’ll press?
 10. How can you tell the difference between break and continue?
+The break and continue statements are used in loops to alter the flow of control.
+When encountered within a loop, the 'break' statement immediately terminates the loop and resumes execution at the next statement outside the loop.
+When encountered within a loop, the 'continue' statement skips the rest of the loop's body for the current iteration and moves on to the next iteration.
+
 11. In a for loop, what is the difference between range(10), range(0, 10), and range(0, 10, 1)?
+range(10) - This expression generates a sequence of numbers from 0 to 9 (10 numbers in total).
+range(0, 10) - This expression generates a sequence of numbers from 0 to 9 (10 numbers in total).
+range(0, 10, 1) - This expression generates a sequence of numbers from 0 to 9 (10 numbers in total).
 12. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalent program that prints the numbers 1 to 10 using a while loop.
+Program using for loop:
+for i in range(1, 11):
+    print(i)
+Program using while loop:
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+
 13. If you had a function named bacon() inside a module named spam, how would you call it after importing spam?
+import spam
+spam.bacon()
