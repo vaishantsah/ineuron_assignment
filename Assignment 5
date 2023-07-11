@@ -1,7 +1,18 @@
 1. What does an empty dictionary's code look like?
+dict = {}
+
 2. What is the value of a dictionary value with the key 'foo' and the value 42?
+The value of a dictionary with the key 'foo' and the value 42 is 42.
+
 3. What is the most significant distinction between a dictionary and a list?
+In a dictionary:
+Data is stored in key-value pairs.
+In a list:
+Data is stored in an ordered sequence of elements.
+
 4. What happens if you try to access spam['foo'] if spam is {'bar': 100}?
+We'll get a KeyError since 'foo' doesn't exist in the dictionary 'spam'.
+
 5. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.keys()?
 6. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.values()?
 7. What is a shortcut for the following code?
