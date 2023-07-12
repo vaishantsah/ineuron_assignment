@@ -14,9 +14,22 @@ Data is stored in an ordered sequence of elements.
 We'll get a KeyError since 'foo' doesn't exist in the dictionary 'spam'.
 
 5. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.keys()?
+'cat' in spam: This expression checks if the key 'cat' exists directly in the dictionary spam. If the key is present, it will return True; otherwise, it will return False.
+'cat' in spam.keys(): This expression first retrieves all the keys of the dictionary spam using the keys() method and then checks if 'cat' is present among those keys. 
+If the key is present, it will return True; otherwise, it will return False.
+
 6. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.values()?
+'cat' in spam checks for the presence of 'cat' among the keys of the dictionary.
+'cat' in spam.values() checks for the presence of 'cat' among the values of the dictionary.
+
 7. What is a shortcut for the following code?
 if 'color' not in spam:
 spam['color'] = 'black';
 
+spam.setdefault('color', 'black')
+This line of code achieves the same result as the previous code block. It checks if the key 'color' exists in the spam dictionary. If it does, it does nothing. 
+If the key does not exist, it adds the key 'color' with the value 'black' to the dictionary.
+
 8. How do you "pretty print" dictionary values using which module and function?
+To "pretty print" dictionary values in Python, you can use the pprint module and its pprint function. The pprint module provides a way to format and display data structures, including
+dictionaries, in a more readable and organized manner.
