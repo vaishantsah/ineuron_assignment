@@ -17,17 +17,26 @@ This means that you can include a single quote character within a string delimit
 We can use triple quotes (''' or """) to create a multi-line string.
 
 6. What are the values of the given expressions?
-"Hello, world!"[1]
-"Hello, world!"[0:5]
-"Hello, world!"[:5]
-"Hello, world!"[3:]
+"Hello, world!"[1] - e
+"Hello, world!"[0:5] - Hello
+"Hello, world!"[:5] - Hello
+"Hello, world!"[3:] - lo, world!
 
 7. What are the values of the following expressions?
-&#39;Hello&#39;.upper()
-&#39;Hello&#39;.upper().isupper()
-&#39;Hello&#39;.upper().lower()
+'Hello'.upper() - HELLO
+'Hello'.upper().isupper() - False
+'Hello'.upper().lower() - False
 8. What are the values of the following expressions?
-&#39;Remember, remember, the fifth of July.&#39;.split()
+'Remember, remember, the fifth of July.'.split()
 &#39;-&#39;.join(&#39;There can only one.&#39;.split())
+This will be the following output 
+['Remember,', 'remember,', 'the', 'fifth', 'of', 'July.'].
+'There-can-only-one.'
+
 9. What are the methods for right-justifying, left-justifying, and centering a string?
+Right-justifying a string: The str.rjust(width, fillchar) method is used to right-justify a string within a specified width.
+Left-justifying a string: The str.ljust(width, fillchar) method is used to left-justify a string within a specified width.
+Centering a string: The str.center(width, fillchar) method is used to center a string within a specified width.
+
 10. What is the best way to remove whitespace characters from the start or end?
+The best way is by using the str.strip() method.
