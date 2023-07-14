@@ -1,14 +1,26 @@
 1. What are escape characters, and how do you use them?
+Escape characters are special characters in a string that are used to represent certain actions or characters that cannot be directly typed or included in a string.
+
 2. What do the escape characters n and t stand for?
+n stands for New Line
+t stands for Tab
+
 3. What is the way to include backslash characters in a string?
-4. The string &quot;Howl&#39;s Moving Castle&quot; is a correct value. Why isn&#39;t the single quote character in the
-word Howl&#39;s not escaped a problem?
-5. How do you write a string of newlines if you don&#39;t want to use the n character?
+We can include backslash characters by using another blackslash in the string.
+
+4. The string "Howl's Moving Castle" is a correct value. Why isn't the single quote character in the
+word Howl's not escaped a problem?
+In Python, the single quote character (') can be used to delimit a string, and it is not necessary to escape it within double quotes (") or vice versa. 
+This means that you can include a single quote character within a string delimited by double quotes, and vice versa, without causing any issues or errors.
+
+5. How do you write a string of newlines if you don't want to use the n character?
+We can use triple quotes (''' or """) to create a multi-line string.
+
 6. What are the values of the given expressions?
-&#39;Hello, world!&#39;[1]
-&#39;Hello, world!&#39;[0:5]
-&#39;Hello, world!&#39;[:5]
-&#39;Hello, world!&#39;[3:]
+"Hello, world!"[1]
+"Hello, world!"[0:5]
+"Hello, world!"[:5]
+"Hello, world!"[3:]
 
 7. What are the values of the following expressions?
 &#39;Hello&#39;.upper()
