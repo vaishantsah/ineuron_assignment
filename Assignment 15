@@ -1,0 +1,59 @@
+1.How many seconds are in an hour? Use the interactive interpreter as a calculator and multiply the number of seconds in a minute (60) by the number of minutes in an 
+hour (also 60).sol. 60
+To calculate we can multiply the number of seconds in a minute (60) by the number of minutes in an hour (60), the interpreter in a calculator mode will have codes like this
+>>> seconds_in_minute = 60
+>>> minutes_in_hour = 60
+>>> seconds_in_hour = seconds_in_minute * minutes_in_hour
+>>> seconds_in_hour
+3600
+
+2. Assign the result from the previous task (seconds in an hour) to a variable called seconds_per_hour.
+seconds_per_hour = 3600
+
+3. How many seconds do you think there are in a day? Make use of the variables seconds per hour and minutes per hour.
+There are 86400 seconds in a day
+We can calculate the result using these two calculations;
+seconds_per_day = seconds_per_hour * 24
+seconds_per_day = (minutes_per_hour * 60) * 24
+
+4. Calculate seconds per day again, but this time save the result in a variable called seconds_per_day
+seconds_per_day = (minutes_per_hour * 60) * 24
+
+5. Divide seconds_per_day by seconds_per_hour. Use floating-point (/) division.
+result = seconds_per_day / seconds_per_hour
+6. Divide seconds_per_day by seconds_per_hour, using integer (//) division. Did this number agree with the floating-point value from the previous question, aside from 
+the final .0?
+result = seconds_per_day // seconds_per_hour
+Aside from '.0' from the result "24.0" integer devision produced the same result.
+
+7. Write a generator, genPrimes, that returns the sequence of prime numbers on successive calls to its next() method: 2, 3, 5, 7, 11, ...
+def genPrimes():
+    primes = [2]  
+    yield 2       # Yield the first prime number
+
+    num = 3       # Start checking for primes from 3
+    while True:
+        is_prime = True
+
+        for prime in primes:
+            if num % prime == 0:
+                is_prime = False
+                break
+
+        if is_prime:
+            primes.append(num)
+            yield num
+
+        num += 2    # Increment by 2 to check only odd numbers (except 2)
+
+prime_generator = genPrimes()
+print(next(prime_generator))  
+# Output: 2
+print(next(prime_generator))  
+# Output: 3
+print(next(prime_generator))  
+# Output: 5
+print(next(prime_generator))  
+# Output: 7
+print(next(prime_generator))  
+# Output: 11
