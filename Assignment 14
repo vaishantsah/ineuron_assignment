@@ -11,18 +11,24 @@ implementation in a particular programming language or framework.
 from PIL import Image
 
 # Open the image file
-image = Image.open("image.jpg")  # Replace "image.jpg" with the actual path to your image file
+image = Image.open("C:\Users\Super Computer\Downloads\whatsapp20235460.lpg") 
 
 # Get the width and height of the image
 width, height = image.size
 
-# Print the width and height
 print("Width:", width)
 print("Height:", height)
 
-5. What method would you call to get Image object for a 100×100 image, excluding the lower-left
-quarter of it?
+5. What method would you call to get Image object for a 100×100 image, excluding the lower-left quarter of it?
+We can use the crop function to achieve this result.
+cropped_image = image.crop((0,50,50,50,100))
+
 6. After making changes to an Image object, how could you save it as an image file?
+We use the function save(), where save("name_of_image") takes an argument for the name of the image file.
+
 7. What module contains Pillow’s shape-drawing code?
-8. Image objects do not have drawing methods. What kind of object does? How do you get this kind
-of object?
+ImageDraw
+
+8. Image objects do not have drawing methods. What kind of object does? How do you get this kind of object?
+To draw on an image, you need to create an 'ImageDraw' object associated with the image. The ImageDraw object provides the drawing methods.
+To get an ImageDraw object, you need to use the ImageDraw.Draw() function and pass the Image object as an argument.
