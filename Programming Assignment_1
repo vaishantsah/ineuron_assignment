@@ -1,0 +1,65 @@
+1. Write a Python program to print &quot;Hello Python&quot;?
+print("Hello Python")
+
+2. Write a Python program to do arithmetical operations addition and division.?
+def add(*nums):
+    result=0
+    numbers=nums
+    for num in numbers:
+        result+=num
+    return result
+
+def div(num1:int,num2:int):
+    try:
+        result=num1//num2
+        return result
+    except ZeroDivisionError as zero:
+        return f"Cannot perform {zero}"
+    except Exception as e:
+        return f"Error occured {e}"
+    
+def main():
+    num_list:list=()
+    num_list=input("Enter a list of numbers to add (seperated by commas): ")
+    num_list=[int(num) for num in num_list.split(",")]
+    adding=add(*num_list)
+    print(f"Addition result {adding}")
+    division=div(4,1)
+    print(f"Division result {division}")
+
+if __name__=="__main__":
+    main()
+3. Write a Python program to find the area of a triangle?
+def area(base, height):
+  return 0.5*base*height
+
+def main():
+  tri_base=int(input("Please enter base of triangle"))
+  tri_height=int(input("Please enter hright of the triangle"))
+  tri_area=area(tri_base,tri_height)
+  print(f"Area of triangle is {tri_area}")
+
+if __name__=="__main__":
+  main()
+
+4. Write a Python program to swap two variables?
+def swap(var1,var2):
+  temp=0
+  temp=var1
+  var1=var2
+  var2=temp
+  return var1,var2
+
+def main():
+  first_num=int(input("Please enter first variable"))
+  second_num=int(input("Please enter second variable"))
+  first,second = swap(first_num,second_num)
+  print(f"Swapped values are {first} and {second}")
+
+if __name__=="__main__":
+  main()
+
+5. Write a Python program to generate a random number?
+import random
+integer=random.randint(0,5)
+print(f"Random integer is {integer}")
