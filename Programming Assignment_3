@@ -1,0 +1,93 @@
+1. Write a Python Program to Check if a Number is Positive, Negative or Zero?
+def check(num):
+  if num == 0:
+    return "Number is zero"
+  elif num < 0:
+    return "Number is negative"
+  else:
+    return "Number is positive"
+
+def main():
+  input_num=int(input("Please enter a number to check"))
+  result = check(input_num)
+  print(result)
+
+if __name__=="__main__":
+  main()
+
+2. Write a Python Program to Check if a Number is Odd or Even?
+def check(num):
+  if num % 2 == 0:
+    return "Number is even"
+  else:
+    return "Number is odd"
+
+def main():
+  input_num=int(input("Please enter a number to check"))
+  result = check(input_num)
+  print(result)
+
+if __name__=="__main__":
+  main()
+
+3. Write a Python Program to Check Leap Year?
+def is_leap_year(year):
+  if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    return True
+  else:
+    return False
+
+def main():
+  input_year=int(input("Enter an year to check : "))
+  result=is_leap_year(input_year)
+  if result == True:
+    print("Leap Year")
+  else:
+    print("False")
+
+if __name__=="__main__":
+  main()
+
+4. Write a Python Program to Check Prime Number?
+#4. Write a Python Program to Check Prime Number?
+def is_prime_num(num):
+    counter=0
+    if num <0:
+        return "Please enter a positive number"
+    for i in range(1,num+1):
+        if num%i==0:
+            counter+=1 #If the number is divisible by i then increase the counter by 1
+    if counter==2:
+        return True # A Prime number will only get divided twice
+    else:
+        return False # A Non Prime Number will get divided more or less than 2
+def main():
+  input_num=int(input("Enter a number to check : "))
+  result=is_prime_num(input_num)
+  if result == True:
+    print("Prime Number")
+  elif result == False:
+    print("Non Prime Number")
+  else:
+    print(result)
+
+if __name__=="__main__":
+  main()
+
+5. Write a Python Program to Print all Prime Numbers in an Interval of 1-10000?
+from functools import cache
+@cache
+def is_prime_range():
+  for i in range(1,10001):
+    counter=0
+    for j in range(1,i+1):
+      if i%j==0:
+        counter+=1
+    if counter==2:
+      print(f"{i} is Prime Number")
+
+def main():
+  is_prime_range()
+
+if __name__=="__main__":
+  main()
