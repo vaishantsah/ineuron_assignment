@@ -1,5 +1,94 @@
 1. Write a Python program to convert kilometers to miles?
+def kilo_to_miles(distance):
+  return distance*0.621
+
+def main():
+  kilo=float(input("Enter kilometers to convert"))
+  result=kilo_to_miles(kilo)
+  print(f"{kilo}km is {result} miles")
+
+if __name__=="__main__":
+  main()
+
 2. Write a Python program to convert Celsius to Fahrenheit?
+def convert_temp(celcius):
+  return (celcius*1.8)+32
+
+def main():
+  temp=float(input("Enter temperature in Celcius to convert to Fahrenheit"))
+  result=convert_temp(temp)
+  print(f"{temp} celcius is {result} Fahrenheit")
+
+if __name__=="__main__":
+  main()
 3. Write a Python program to display calendar?
+import calendar
+
+def display_calendar(month,year):
+  try:
+     return calendar.month(year,month)
+  except Exception as e:
+     return f"Some error occured {e}"
+
+def main():
+  month=int(input("Enter month "))
+  year=int(input("Enter year "))
+  result=display_calendar(month,year)
+  print(result)
+
+if __name__=="__main__":
+  main()
+
 4. Write a Python program to solve quadratic equation?
+# Write a Python program to solve quadratic equation?
+import math
+import cmath
+
+def quad_equation(a,b,c):
+  if a==0:
+    return "First coefficient cannot be 0"
+  else:
+    discriminant=(b**2)-(4*a*c)
+    if discriminant < 0: #Use cmath incase the discriminant is negative
+        positive=(-b+cmath.sqrt(discriminant))/(2*a)
+        negative=(-b-cmath.sqrt(discriminant))/(2*a)
+        return positive, negative
+    
+    else : #Use math incase the discriminant is positive
+        positive=(-b+math.sqrt(discriminant))/(2*a)
+        negative=(-b-math.sqrt(discriminant))/(2*a)
+        return positive, negative
+
+def main():
+  print("The convention to follow quadratic equation is : ax2 + bx + c=0")
+  x=int(input("Enter first coefficient(a) "))
+  y=int(input("Enter second coefficient(b) "))
+  c=int(input("Enter third coefficient(c) "))
+  positive,negative=quad_equation(x,y,c)
+  if isinstance(positive,complex) or isinstance(negative,complex): #perform a quick check if the instance is negative or positive
+    print(f"Root 1 ={positive.real} + {positive.imag}j\nRoot 2 ={negative.real} + {negative.imag}j")
+  else:
+    print(f"Root 1 ={positive}\nRoot 2 ={negative}")
+
+if __name__=="__main__":
+  main()
+
 5. Write a Python program to swap two variables without temp variable?
+# Write a Python program to swap two variables without temp variable?
+def swap(var1,var2):
+  x=var1
+  y=var2
+  x=x+y
+  y=x-y #y is now x
+  x=x-y #x is now y
+  return x,y
+
+def main():
+  variable1=int(input("Enter first variable "))
+  variable2=int(input("Enter second variable "))
+  print(f"Variable 1 is {variable1}\nVariable 2 is {variable2}")
+  result1, result2 = swap(variable1, variable2)
+  print(f"Variable 1 now is {result1}\nVariable 2 now is {result2}")
+
+if __name__=="__main__":
+  main()
