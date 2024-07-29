@@ -1,6 +1,60 @@
 1. Write a Python Program to Find the Factorial of a Number?
+def find_fact(num):
+  fact=1 # initialize the counter value to 1
+  for i in range(1,num+1):
+    fact=fact*i # calculate factorial by increasing counter value
+  return fact
+
+def main():
+  num = int(input("Enter a number"))
+  if num<1:
+    print(" Please enter a positive number")
+  else:
+    result=find_fact(num)
+    print(result)
+
+if __name__=="__main__":
+  main()
+
 2. Write a Python Program to Display the multiplication Table?
+def print_table(num):
+  for i in range(1,11):
+    result=num*i  
+    print(f"{num} x {i} = {result}")
+
+def main():
+  input_num=int(input("Enter an integer - "))
+  print_table(input_num)
+
+if __name__=="__main__":
+  main()
+
 3. Write a Python Program to Print the Fibonacci sequence?
+def fibo(num):
+  first=0 # stores the first number
+  second=1 # stores the second number
+  temp=0 # will store the sum to update the second number
+  print(f"{first} ", end="")
+  for i in range(0,num):
+    print(f"{second} ", end="")
+    temp=first+second
+    first=second # update the first number with second number
+    second=temp # update the new result in the second number
+
+def main():
+  input_num=int(input("Enter total Fibonnaci numbers to print : "))
+  if input_num<1: # Cannot be a negative counter
+    print("Enter a positive number")
+  else:
+    fibo(input_num) # Calling the fibo function with counter value
+
+if __name__=="__main__":
+  main()
+
 4. Write a Python Program to Check Armstrong Number?
+def armstrong(num):
+  length=len(str(num))
+  for i in range(0,length):
+    
 5. Write a Python Program to Find Armstrong Number in an Interval?
 6. Write a Python Program to Find the Sum of Natural Numbers?
