@@ -49,7 +49,6 @@ if __name__=="__main__":
   main()
 
 4. Write a Python Program to Check Prime Number?
-#4. Write a Python Program to Check Prime Number?
 def is_prime_num(num):
     counter=0
     if num <0:
