@@ -71,5 +71,44 @@ if __name__=="__main__":
     main()
 
 5. Write a Python Program to Find Armstrong Number in an Interval?
+def check_armstrong(lower,upper):
+    for num in range(lower,upper+1):
+        power=len(str(num)) #stores the power of the number
+        result=0 # will be used to store the number after adding
+        copy_num=num # copied the original number
+        while copy_num>0:
+            digit=copy_num%10 # isloating every digit
+            result+=(digit**power) # digit is added after raising to the power
+            copy_num=copy_num//10 #the last digit is removed from the copied number
+        if result==num: # if the added number is same as the original number then it's an armstrong number
+            print(f"{num} is Armstrong Number")
+        else:
+            print(f"{num} is not an Armstrong number")
 
+def main():
+    low=int(input("Enter the lower range : "))
+    high=int(input("Enter the higher range : "))
+    if high<low: # raise an error in case the high range value is less than lower
+        print("Enter a higher range")
+    else:
+        print(check_armstrong(low,high))
+
+if __name__=="__main__":
+    main()
 6. Write a Python Program to Find the Sum of Natural Numbers?
+from functools import cache
+
+@cache
+def natural_sum(num:int):
+  result=0
+  for i in range(0,num+1):
+    result+=i
+  return result
+
+def main():
+  input_range=int(input("Enter a range end : "))
+  result=natural_sum(input_range)
+  print(f"The sum of natural numbers till {input_range} is {result}")
+
+if __name__=="__main__":
+  main()
