@@ -26,9 +26,62 @@ if __name__=="__main__":
 
 2. Write a Python Program to Find Factorial of Number Using Recursion?
 def fact(num):
-  if num==0:
-    return 1
+    if num==0:
+        return 1
+    elif num==1:
+        return 1
+    else:
+        return num * fact(num-1)
+    
+def main():
+    input_value=int(input("Enter a number : "))
+    result=(fact(input_value))
+    print(result)
+
+if __name__=="__main__":
+    main()
 
 3. Write a Python Program to calculate your Body Mass Index?
+def bmi(weight, height):
+    height*=height
+    try:
+        return weight/height
+    except ZeroDivisionError as e:
+        return e
+    except Exception as e:
+        return e
+    
+def main():
+    height=float(input("Enter height : "))
+    weight=float(input("Enter weight : "))
+    print(bmi(weight,height))
+
+if __name__=="__main__":
+    main()
+
 4. Write a Python Program to calculate the natural logarithm of any number?
+import math
+
+def log(num):
+    return math.log(num)
+
+def main():
+    input_value=float(input("Enter a number : "))
+    print(log(input_value))
+
+if __name__=="__main__":
+    main()
+
 5. Write a Python Program for cube sum of first n natural numbers?
+def cube_sum(limit):
+    for num in range(1,limit+1):
+        mid_value=num+1
+        mid_value*=mid_value # calculating the value of (n+1)^2
+        print(((num*num)*mid_value)/4) #using the sum of cube formula
+
+def main():
+    input_value=int(input("Enter limit : "))
+    print(cube_sum(input_value))
+
+if __name__=="__main__":
+    main()
