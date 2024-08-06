@@ -40,5 +40,112 @@ if __name__=="__main__":
   main()
 
 3. Write a Python Program for array rotation?
+def right_rotate_array(num:list,position:int)->list:
+    
+    k=position%len(num)
+    l,r=0,len(num)-1
+    while l<r: #using the mod to first rotate the array
+        num[l], num[r] = num[r], num[l]
+        l, r=l+1,r-1
+    
+    l, r=0,position-1
+    while l<r: # loop to reverse the first part of array
+        num[l], num[r] = num[r], num[l]
+        l, r=l+1,r-1
+    
+    l, r=k, len(num)-1
+    while l<r: # loop to rotate the second part of array
+        num[l], num[r] = num[r], num[l]
+        l, r=l+1,r-1
+    return num
+
+def main():
+    pos=int(input("Enter the position to shift : "))
+    try:
+        input_list:list=[]
+        print("Enter a value below to rotate:")
+        while True:
+            input_list.append(int(input("- ")))
+    except:
+        result:list=right_rotate_array(input_list,pos)
+        print(f"New array is {result}")
+
+if __name__=="__main__":
+    main()
+
 4. Write a Python Program to Split the array and add the first part to the end?
+def split_array(num:list,position:int)->list:
+    first_list=[]
+    second_list=[]
+    l,r=0,position
+    while l<r:
+        first_list.append(num[l])
+        l+=1
+    
+    l,r=position, len(num)-1
+    while l<r:
+        second_list.append(num[l])
+        l+=1
+    
+    return first_list,second_list
+
+def add_list(first:list,second:list)->list:
+    for i in range(0,len(first)):
+        second.append(first[i])
+    return second
+
+def main():
+    position=int(input("Enter position : "))
+    first_list=[]
+    print("Enter values belows for list:")
+    try:
+        while True:
+            input_value=int(input("-"))
+            first_list.append(input_value)
+    except:
+        first,second=split_array(first_list,position)
+        result=add_list(first,second)
+        print(result)
+
+if __name__=="__main__":
+    main()
+
 5. Write a Python Program to check if given array is Monotonic?
+def decreasing_monotonic(nums:list)->str:
+    global flag
+    flag=0
+    for i in range(0,len(nums)-1):
+        if nums[i]>nums[i+1]:
+            flag=1
+            return "Non monotonic"
+    if flag==0:
+        return "Increasing Monotonic"
+    
+def increasing_monotonic(nums:list)->str:
+    global flag
+    flag=0
+    for i in range(0,len(nums)-1):
+        if nums[i]<nums[i+1]:
+            flag=1
+            return "Non monotonic"
+    if flag==0:
+        return "Decreasing Monotonic"
+            
+def main():
+    try:
+        input_list:list=[]
+        print("Enter a value below to find a monotonic list:")
+        while True:
+            input_list.append(int(input("- ")))
+    except:
+        if input_list[0]<input_list[1] or input_list[0]==input_list[1]:
+            result=decreasing_monotonic(input_list)
+            print(f"List is {result}")
+        elif input_list[0]>input_list[1] or input_list[0]==input_list[1]:
+            result=increasing_monotonic(input_list)
+            print(f"List is {result}")
+        else:
+            print("Non monotonic")
+            
+if __name__=="__main__":
+  main()
