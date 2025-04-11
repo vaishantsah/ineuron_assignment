@@ -1,14 +1,28 @@
 1. Why are functions advantageous to have in your programs?
+Functions are advantageous in programming because they promote code reusability, modularity, readability, and maintainability, making programs easier to understand, debug, and modify.
 2. When does the code in a function run: when it's specified or when it's called?
+When it's called.
 3. What statement creates a function?
+def creates a function.
 4. What is the difference between a function and a function call?
+Function call is when the function is the action of being executed while a function is a block of code made for a specific task under a name.
 5. How many global scopes are there in a Python program? How many local scopes?
+There's a single global scope but as many local scopes as needed.
 6. What happens to variables in a local scope when the function call returns?
+The variables inside the functions are destroyed and their allocated memories are deallocated.
 7. What is the concept of a return value? Is it possible to have a return value in an expression?
+A return value is the data sent by a function where it's called. Yes it's poissible to return an expression as a return value.
 8. If a function does not have a return statement, what is the return value of a call to that function?
+It'll be None.
 9. How do you make a function variable refer to the global variable?
+Using an equals operator we can assign the value of a local from a global variable.
 10. What is the data type of None?
+It's NoneType. It represents the absence of data.
 11. What does the sentence import areallyourpetsnamederic do?
+It imports a python module areallyourpetsnamederic.
 12. If you had a bacon() feature in a spam module, what would you call it after importing spam?
+spam.bacon()
 13. What can you do to save a programme from crashing if it encounters an error?
+try and catch block can handle any exception preventing complete program crashing.
 14. What is the purpose of the try clause? What is the purpose of the except clause?
+try is used to run the part of code which can potentially cause an exception or failure. Except clause can catch all the errors found in the try clause.
