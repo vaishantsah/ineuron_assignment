@@ -1,11 +1,134 @@
 1. Write a Python program to find sum of elements in list?
+class ListSum:
+    
+    def sum_of_list(x:list)->int:
+        return sum(x)
+
+if __name__ == "__main__":
+    x:list =[1,2,3,4,5]
+    print(f"Sum = {ListSum.sum_of_list(x)}")
+
 2. Write a Python program to Multiply all numbers in the list?
+class MultiplyList:
+
+    def multiply_list(x:list)->list:
+        if len(x)==0:
+            return 0
+        else:
+            result=1
+            for index, value in enumerate(x):
+                result*=value
+            return result
+        
+if __name__ == "__main__":
+    x:list = [1,2,3,4,5]
+    print(f"Multiplication = {MultiplyList.multiply_list(x)}")
+
 3. Write a Python program to find smallest number in a list?
+class SmallestInList:
+    def smallest_in_list(x:list)->int:
+        smallest=x[0]
+        for index, value in enumerate(x):
+            if value<smallest:
+                smallest=value
+        return smallest
+    
+if __name__ == "__main__":
+    x:list = [10,2,3,4,5]
+    print(f"Smallest = {SmallestInList.smallest_in_list(x)}")
+
 4. Write a Python program to find largest number in a list?
+class LargestInList:
+    def largest_in_list(x:list)->int:
+        largest=x[0]
+        for index, value in enumerate(x):
+            if value>largest:
+                largest=value
+        return largest
+    
+if __name__ == "__main__":
+    x:list = [10,2,3,4,5]
+    print(f"Largest = {LargestInList.largest_in_list(x)}")
+
 5. Write a Python program to find second largest number in a list?
+class SecodndLargestInList:
+    def second_largest(x:list)->int:
+        x=sorted(set(x),reverse=True)
+        return x[1]
+    
+if __name__ == "__main__":
+    x:list = [10,2,3,4,5,10,3]
+    print(f"Second Largest = {SecodndLargestInList.second_largest(x)}")
+
 6. Write a Python program to find N largest elements from a list?
+class NLargestInList:
+    def n_largest(x:list, n:int)->list:
+        x=sorted(set(x),reverse=True)
+        return x[:n]
+
+if __name__ == "__main__":
+    x:list = [10,2,81,4,5,10,3]
+    n:int = 3
+    print(f"{n} Largest = {NLargestInList.n_largest(x,n)}")
+
 7. Write a Python program to print even numbers in a list?
+class EvenInList:
+    def even_in_list(x:list)->list:
+        even_in_list=[]
+        for index, value in enumerate(x):
+            if value%2==0:
+                even_in_list.append(value)
+        return even_in_list
+    
+if __name__ == "__main__":
+    x:list = [10,2,3,4,5]
+    print(f"Even Numbers = {EvenInList.even_in_list(x)}")
+
 8. Write a Python program to print odd numbers in a List?
+class OddInList:
+    def odd_in_list(x:list)->list:
+        odd_in_list=[]
+        for index, value in enumerate(x):
+            if value%2!=0:
+                odd_in_list.append(value)
+        return odd_in_list
+
+if __name__ == "__main__":
+    x:list = [1,2,3,4,5]
+    print(f"Odd Numbers = {OddInList.odd_in_list(x)}")
+
 9. Write a Python program to Remove empty List from List?
+class RemoveEmptyList:
+    def remove_empty_list(x:list)->list:
+        return [i for i in x if i] #if i is not empty return True in case of empty it returns False
+
+if __name__ == "__main__":
+    x=[5,6,[],3,[],[],9]
+    print(f"Original List: {x}")
+    print(f"List after removing empty lists: {RemoveEmptyList.remove_empty_list(x)}")
+
 10. Write a Python program to Cloning or Copying a list?
+class CloneList:
+    def clone_list(x:list)->list:
+        return(x[:])
+
+if __name__ == "__main__":
+    x=[1,2,3,4,5]
+    b=[5,6,7,8,9]
+    print(f"Original List: {x}")
+    print(f"Another List: {b}")
+    b= CloneList.clone_list(x)
+    print(f"Cloned List: {b}")
+
 11. Write a Python program to Count occurrences of an element in a list?
+class CountOccurrences:
+    def count_occur(x:list,element:int)->int:
+        return x.count(element)
+    
+if __name__ == "__main__":
+    x=[1,2,3,4,5,1,2,1,1]
+    element=1
+    print(f"List: {x}")
+    print(f"Element to count: {element}")
+    print(f"Occurrences of {element} in list: {CountOccurrences.count_occur(x,element)}")
+
