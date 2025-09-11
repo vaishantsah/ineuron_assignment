@@ -1,7 +1,106 @@
 1. Write a Python program to find words which are greater than given length k?
+class FindWordsGreaterThanK:
+    def greater_than(words:list,k:int)->list:
+        return [word for word in words if len(word)>k]
+    
+if __name__ == "__main__":
+    words=["ineuron","data","science","machine","learning","artificial","intelligence"]
+    k=5
+    print(f"Words greater than length {k}: {FindWordsGreaterThanK.greater_than(words,k)}")
+
 2. Write a Python program for removing i-th character from a string?
+class RemoveIthCharacter:
+    def remove_char(sentence:str,i:int)->str:
+        return sentence[:i]+sentence[i+1:]
+    
+if __name__=="__main__":
+    sentence = "ineuron"
+    i = 3
+    print(f"Original String: {sentence}")
+    print(f"Removing i-th char :{RemoveIthCharacter.remove_char(sentence,i)}")
+
 3. Write a Python program to split and join a string?
+class SplitandJoin:
+        def split_join_string(sentence:str,splitter:str)->str:
+            split_string=sentence.split(splitter)
+            print(f"String after split: {split_string}")
+            return " ".join(split_string)
+        
+if __name__=="__main__":
+    sentence = "Ineuron Full Stack Data Science"
+    splitter=" "
+    print(f"Original String: {sentence}")
+    print(f"String after split and join: {SplitandJoin.split_join_string(sentence,splitter)}")
+
 4. Write a Python to check if a given string is binary string or not?
+class stringBinary:
+    def check_binary(string:str)->bool:
+        for char in string:
+            if char == '0' or char == '1':
+                continue
+            else:
+                return False
+
+if __name__=="__main__":
+    string="101010101010"
+    print(f"Given String: {string}")
+    value = stringBinary.check_binary(string)
+    if value==None or value==True:
+        print(f"Is Binary")
+    else:
+        print(f"Not a Binary")
+
 5. Write a Python program to find uncommon words from two Strings?
+class UncommonWords:
+    def find_uncommon_word(str1:str, str2:str)->list:
+        word1 =set(str1.split())
+        word2 =set(str2.split())
+
+        result = list(word1 ^ word2)
+        return result
+
+if __name__ == "__main__":
+    str1 = "Python is a programming language"
+    str2 = "Python is used for data science"
+    print(UncommonWords.find_uncommon_word(str1, str2))
+
 6. Write a Python to find all duplicate characters in string?
+class DuplicateCharacters:
+    def find_duplicate_characters(string:str)->set:
+        char_count = {}
+        duplicates = set()
+
+        for char in string:
+            if char in char_count:
+                char_count[char] += 1
+            else:
+                char_count[char] = 1
+
+        for char, count in char_count.items():
+            if count > 1:
+                duplicates.add(char)
+
+        return duplicates
+    
+if __name__ == "__main__":
+    string = "programming"
+    result = DuplicateCharacters.find_duplicate_characters(string)
+    print(f"Duplicate characters in '{string}': {result}")
+
 7. Write a Python Program to check if a string contains any special character?
+import string
+
+class SpecialChar:
+    def contains_special_char(sentence:str)->bool:
+        for char in sentence:
+            if char in string.punctuation:
+                return True
+    
+if __name__=="__main__":
+    sentence="Hello@World"
+    result=SpecialChar.contains_special_char(sentence)
+    if result:
+        print(f"The string '{sentence}' contains special characters.")
+    else:
+        print(f"The string '{sentence}' does not contain any special characters.")
+
