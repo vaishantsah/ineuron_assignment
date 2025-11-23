@@ -1,7 +1,115 @@
 1. Write a Python program to Extract Unique values dictionary values?
+class UniqueValuesExtractor:
+    def extract_unique_values(input_dict:dict)->list:
+        unique_values=set()
+        for value in input_dict.values():
+            unique_values.add(value)
+        return list(unique_values)
+    
+if __name__=="__main__":
+    input_dict={'a':1,'b':2,'c':3,'d':2,'e':1}
+    print("Input Dictionary:",input_dict)
+    result=UniqueValuesExtractor.extract_unique_values(input_dict)
+    print("Unique Values:",result)
+
 2. Write a Python program to find the sum of all items in a dictionary?
+class DictionarySumCalculator:
+    def sum_of_dict(input_dict:dict)->int:
+        sum=0
+        for item in input_dict.values():
+            sum+=item
+        return sum
+    
+if __name__=="__main__":
+    input_dict={'a':1,'b':2,'c':3,'d':4,'e':5}
+    print("Input Dictionary:",input_dict)
+    result=DictionarySumCalculator.sum_of_dict(input_dict)
+    print("Sum of all items in the dictionary:",result)
+
 3. Write a Python program to Merging two Dictionaries?
+class MergeDictionaries:
+    def merge_dicts(dict1:dict,dict2:dict)->dict:
+        merge_dictionary= dict1 | dict2
+        return merge_dictionary
+
+if __name__=="__main__":
+    dict1={'a':1,'b':2,'c':3}
+    dict2={'c':4,'e':5,'f':6}
+    print("First Dictionary:",dict1)
+    print("Second Dictionary:",dict2)
+    result=MergeDictionaries.merge_dicts(dict1,dict2)
+    print("Merged Dictionary:",result)
+
 4. Write a Python program to convert key-values list to flat dictionary?
+class FlatDictionaryConverter:
+    def convert_dict(book:list)->dict:
+        flat_dict={}
+        flat_dict=dict(book)
+        return flat_dict
+    
+if __name__=="__main__":
+    book=[('name','apple'),('color','red'),('price',100)]
+    result=FlatDictionaryConverter.convert_dict(book)
+    print(result)
+
 5. Write a Python program to insertion at the beginning in OrderedDict?
+from collections import OrderedDict
+
+class OrderedDictInsertion:
+    def insert_at_first(dictionaries:dict,key:str,value:int)->OrderedDict:
+        od=OrderedDict(dictionaries)
+        od.update({key:value})
+        od.move_to_end(key,last=False)
+        return od
+
+if __name__=="__main__":
+    dictionaries={'a':1,'b':2,'c':3}
+    key:str='d'
+    value:int=4
+    print("Original Dictionary:",dictionaries)
+    result=OrderedDictInsertion.insert_at_first(dictionaries,key,value)
+    print("Dictionary after insertion at the beginning:",result)
+
 6. Write a Python program to check order of character in string using OrderedDict()?
+from collections import OrderedDict
+
+class CharacterOrderChecker:
+
+    def __init__(self,main_string, pattern):
+        self.main_string = main_string
+        self.pattern= pattern
+
+    def check_order(self,)->bool:
+        od=OrderedDict.fromkeys(self.main_string)
+        ptr=0
+        for char_in_string in od:
+            if ptr < len(self.pattern) and char_in_string == self.pattern[ptr]:
+                ptr+=1
+        return ptr==len(self.pattern)
+    
+if __name__ == "__main__":
+    main_string = "engineers rock"
+    pattern = "er"
+    checker = CharacterOrderChecker(main_string, pattern)
+    result = checker.check_order()
+    print(f"The pattern '{pattern}' appear in order in the string '{main_string}'? \n{result}")
+
 7. Write a Python program to sort Python Dictionaries by Key or Value?
+class DictionarySorter:
+    def __init__(self, input_dict:dict):
+        self.diction=input_dict
+    
+    def sort_by_key(self,)->dict:
+        diction_by_key = dict(sorted(self.diction.items()))
+        print("Dictionary sorted by key:", diction_by_key)
+    
+    def sort_by_value(self,)->dict:
+        diction_by_value = dict(sorted(diction.items(), key=lambda item: item[1]))
+        print("Dictionary sorted by value:", diction_by_value)
+
+if __name__=="__main__":
+    diction = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
+    print("Original Dictionary:", diction)
+    sorter = DictionarySorter(diction)
+    sorter.sort_by_key()
+    sorter.sort_by_value()
