@@ -64,6 +64,18 @@ without,hello,bag,world
 Then, the output should be:
 bag,hello,without,world
 
+class CommasSeperatedSorter:
+    def sort_comma_sep_values(self, input_string:str)->str:
+        values=input_string.rsplit(',')
+        values.sort()
+        return ','.join(values)
+    
+if __name__ == "__main__":
+    input_string=input("Enter values with comma seperation: ")
+    sorter=CommasSeperatedSorter()
+    result=sorter.sort_comma_sep_values(input_string)
+    print(f"Sorted Values are : {result}")
+
 Question 4:
 Write a program that accepts a sequence of whitespace separated words as input and prints
 the words after removing all duplicate words and sorting them alphanumerically.
@@ -71,6 +83,19 @@ Suppose the following input is supplied to the program:
 hello world and practice makes perfect and hello world again
 Then, the output should be:
 again and hello makes perfect practice world
+
+class CommaSeperatorAlphaSorter:
+    def sort_and_print(self, input_string:str)->str:
+        values=input_string.rsplit(' ')
+        value=set(values)
+        value=sorted(value)
+        return ' '.join(value)
+
+if __name__ == "__main__":
+    input_string=input("Enter values with space seperation: ")
+    sorter=CommaSeperatorAlphaSorter()
+    result=sorter.sort_and_print(input_string)
+    print(f"Sorted Values are : {result}")
 
 Question 5:
 Write a program that accepts a sentence and calculate the number of letters and digits.
@@ -80,6 +105,28 @@ Then, the output should be:
 LETTERS 10
 
 DIGITS 3
+
+class Strandint_calc:
+    def __init__(self,input_string:str)->None:
+        self.input_string=input_string
+
+    def calculate_strandint(self)->str:
+        count_int=0
+        count_str=0
+        for val in self.input_string:
+            if val.isdigit():
+                count_int+=1
+            elif val.isalpha():
+                count_str+=1
+            else:
+                pass
+        return f"Strings: {count_str}, \nIntegers: {count_int}"
+    
+if __name__ == "__main__":
+    input_string=input("Enter a sentence: ")
+    calculator=Strandint_calc(input_string)
+    result=calculator.calculate_strandint()
+    print(result)
 
 Question 6:
 A website requires the users to input username and password to register. Write a program to
@@ -99,3 +146,42 @@ If the following passwords are given as input to the program:
 ABd1234@1,a F1#,2w3E*,2We3345
 Then, the output of the program should be:
 ABd1234@1
+
+class Password_Checker:
+    def __init__(self, password: str) -> None:
+        self.password: str = password
+
+    def has_alpha_lower(self) -> bool:
+        return any(c.islower() for c in self.password)
+
+    def has_alpha_upper(self) -> bool:
+        return any(c.isupper() for c in self.password)
+
+    def has_digit(self) -> bool:
+        return any(c.isdigit() for c in self.password)
+
+    def has_special_char(self) -> bool:
+        return any(c in "$#@" for c in self.password)
+
+    def is_valid_length(self) -> bool:
+        length = len(self.password)
+        return 6 <= length <= 12
+
+    def check_valid(self) -> bool:
+        return (
+            self.has_alpha_lower()
+            and self.has_alpha_upper()
+            and self.has_digit()
+            and self.has_special_char()
+            and self.is_valid_length()
+        )
+
+if __name__ == "__main__":
+    raw = input("Enter the passwords to check (comma separated):\n")
+    values = [v.strip() for v in raw.split(",") if v.strip()]
+    valid = []
+    for value in values:
+        checker = Password_Checker(value)
+        if checker.check_valid():
+            valid.append(value)
+    print(",".join(valid))
