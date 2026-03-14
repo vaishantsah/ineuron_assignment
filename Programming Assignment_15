@@ -1,0 +1,94 @@
+1.
+class Generator:
+    def __init__(self, n:int)->None:
+        self.max:int=n
+
+    def yield_num(self):
+        for i in range(0,self.max+1):
+            if i%5==0 and i%7==0:
+                yield i
+    
+if __name__=="__main__":
+    n=int(input("Enter the maximum number: "))
+    generate=Generator(n)
+    numbers=generate.yield_num()
+    for n in numbers:
+        print(f"{n}",end=",")
+
+2.
+class Generator:
+    def __init__(self, n:int)->None:
+        self.max:int=n
+
+    def yield_num(self):
+        for i in range(0,self.max+1):
+            if i%2==0:
+                yield i
+    
+if __name__=="__main__":
+    n=int(input("Enter the maximum number: "))
+    generate=Generator(n)
+    numbers=generate.yield_num()
+    for n in numbers:
+        print(f"{n}",end=",")
+
+3. 
+class Fibolistcomp:
+    def __init__(self, n):
+        self.n = n
+
+    def fibolistcomp(self):
+        if self.n < 1:
+            return []
+        fibolist = [0]
+        if self.n >= 2:
+            fibolist.append(1)
+        [fibolist.append(fibolist[-1] + fibolist[-2]) for i in range(2, self.n)]
+        return fibolist
+
+if __name__ == "__main__":
+    n = int(input("Enter total Fibonacci numbers to print: "))
+    if n < 1:
+        print("Enter a positive number")
+    else:
+        fibolistcomp = Fibolistcomp(n)
+        print(','.join(map(str, fibolistcomp.fibolistcomp())))
+
+4. 
+class EmailSeperator:
+    def __init__(self,email:str)->None:
+        self.email=email
+        
+    def seperator(self)->str:
+        """
+            Separates the username from the email address.
+            
+        Returns:
+            - str: The username part of the email address.
+        """
+        if '@' not in self.email:
+            return "Invalid"
+        else:
+            return self.email.split('@')[0].rstrip()
+        
+if __name__=="__main__":
+    email = input("Enter the email address: ")
+    email_seperator = EmailSeperator(email)
+    print(email_seperator.seperator())
+
+5. 
+class Shape:
+    def area(self)->int:
+        return 0
+        
+class Square(Shape):
+    def __init__(self, length:int):
+        self.length=length
+    
+    def area(self):
+        return self.length**2
+        
+if __name__ == "__main__":
+    length = int(input("Enter the length of the square: "))
+    square = Square(length)
+    print(f"The area of the square is: {square.area()}")
