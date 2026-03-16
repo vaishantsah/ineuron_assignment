@@ -1,0 +1,77 @@
+1.
+class Stutter:
+    def __init__(self,word:str):
+        self.word=word
+    
+    def stutter(self)->str:
+        if len(self.word)<2:
+            return "Too short"
+        else:
+            stutter_word=self.word[:2]
+            return f"{stutter_word}... {stutter_word}... {self.word}?"
+        
+if __name__=="__main__":
+    word=str(input("Enter a word: "))
+    stutter=Stutter(word)
+    print(stutter.stutter())
+
+2.
+import math
+
+class RadiantoDegree:
+    def __init__(self, radian:int):
+        self.radian=radian
+        
+    def convert(self)->float:
+        degrees=(self.radian*180)/math.pi
+        return round(degrees,1)
+    
+if __name__=="__main__":
+    radian=float(input("Enter a number :"))
+    convertor=RadiantoDegree(radian=radian)
+    print(convertor.convert())
+
+3.
+class Curzon:
+    def __init__(self, num:int):
+        self.num=num
+    def calculate(self)->bool:
+        if (1+2**self.num)%(1+2*self.num)==0:
+            return True
+        else:
+            return False
+
+if __name__=="__main__":
+    num=int(input("Enter a number: "))
+    curzon=Curzon(num)
+    print(curzon.calculate())
+
+4.
+import math
+
+class HexagonArea:
+    def __init__(self, side: float):
+        self.side=side
+    
+    def area(self)->float:
+        area=(3*math.sqrt(3)*self.side**2)/2
+        return round(area,1)
+
+if __name__=="__main__":
+    side =float(input("Enter length :"))
+    area=HexagonArea(side)
+    print(area.area())
+
+5.
+class BinaryConvertor:
+    def __init__(self,num):
+        self.num = num
+    
+    def convert_to_binary(self):
+        binary = bin(self.num)
+        return binary[2:]
+    
+if __name__ == "__main__":
+    num = int(input("Enter a number: "))
+    convertor = BinaryConvertor(num)
+    print(f"{num} = {convertor.convert_to_binary()}")
